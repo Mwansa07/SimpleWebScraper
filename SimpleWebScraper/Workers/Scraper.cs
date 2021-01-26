@@ -20,6 +20,18 @@ namespace SimpleWebScraper.Workers
                 {
                     scrapedElements.Add(match.Groups[0].Value);
                 }
+                else
+                {
+                    foreach (var part in scrapeCriteria.Parts)
+                    {
+                        Match matchedPart = Regex.Match(match.Groups[0].Value, part.Regex, part.RegexOption);
+
+                        if (matchedPart.Success)
+                        {
+                            scrapedElements.Add(match.Groups[1].Value);
+                        }
+                    }
+                }
             }
 
 
