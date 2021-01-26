@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using SimpleWebScraper.Builders;
@@ -41,7 +42,17 @@ namespace SimpleWebScraper
 
                 var scrapedElements = scraper.Scrape(scrapeCriteria);
 
-
+                if (scrapedElements.Any())
+                {
+                    foreach (var scrapedElement in scrapedElements)
+                    {
+                        Console.WriteLine(scrapedElement);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("There were no matches for the specified scrape criteria.");
+                }
             }
         }
     }
