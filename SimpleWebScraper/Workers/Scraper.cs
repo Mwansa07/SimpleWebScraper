@@ -34,7 +34,6 @@ namespace SimpleWebScraper.Workers
                 }
             }
 
-
             return scrapedElements;
         }
     }
