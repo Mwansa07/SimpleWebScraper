@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using SimpleWebScraper.Builders;
 using SimpleWebScraper.Data;
 using SimpleWebScraper.Workers;
 
+[assembly: InternalsVisibleTo("SimpleWebScraper.Test.Unit")]
 namespace SimpleWebScraper
 {
     class Program
